@@ -12,8 +12,8 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>Quiz App</title>
-	
-	<link rel = "icon" href = "{% static 'iccc.png' %}" 
+
+	<link rel = "icon" href = "{% static 'iccc.png' %}"
         type = "image/png">
 </head>
 
@@ -26,25 +26,25 @@
             {% for i in exam %}
             <table>
                 <tr>
-                    <td class="text-primary">{{i.id}}) {{i.Question}}</td>
+                    <td class="text-primary">{{i.QuestionNo}}) {{i.Question}}</td>
                 </tr>
                 <tr>
-                    <td><input type="radio" class="rb" name={{i.id}} id="Option1" value="{{i.Option1}}">
+                    <td><input type="radio" class="rb" name={{i.QuestionNo}} id="Option1" value="{{i.Option1}}">
                         {{i.Option1}}
                     </td>
                 </tr>
                 <tr>
-                    <td><input type="radio" class="rb" name={{i.id}} id="Option2" value="{{i.Option2}}">
+                    <td><input type="radio" class="rb" name={{i.QuestionNo}} id="Option2" value="{{i.Option2}}">
                         {{i.Option2}}
                     </td>
                 </tr>
                 <tr>
-                    <td><input type="radio" class="rb" name={{i.id}} id="Option3" value="{{i.Option3}}">
+                    <td><input type="radio" class="rb" name={{i.QuestionNo}} id="Option3" value="{{i.Option3}}">
                         {{i.Option3}}
                     </td>
                 </tr>
                 <tr>
-                    <td><input type="radio" class="rb" name={{i.id}} id="Option4" value="{{i.Option4}}">
+                    <td><input type="radio" class="rb" name={{i.QuestionNo}} id="Option4" value="{{i.Option4}}">
                         {{i.Option4}}
                     </td>
                 </tr>
@@ -105,9 +105,8 @@
     </script>
 
 </body>
-<footer style="text-align: center">
-    <h5 style="text-align: center">To add question click <a href="/create/">here</a></h5>
+<footer class="my-5" style="text-align: center">
+    <h5 style="text-align: center"><a class="btn btn-primary" href="{% url 'create' %}">+ Add New Question</a></h5>
     By <a href="https://github.com/prateiku/">Pratik Chopane</a> & <a href="https://github.com/jacktherock">Abhijeet Sonawane</a>.
 </footer>
-
 </html>
