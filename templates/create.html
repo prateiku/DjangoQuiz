@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+    <title>Add Questions!</title>
+	
+	<link rel = "icon" href = "{% static 'iccc.png' %}" 
+        type = "image/png">
+    <h1 style="text-align: center">Add your own questions!</h1>
+</head>
+<body style="background-color:#CFF4FC;">
+    <form method="POST">
+        {% csrf_token %}
+        <h4 style="text-align: center">{{ form.as_p }}</h4>
+        <h5 style="text-align: center"><input type="submit" value="Submit"></h5>
+    </form>
+</body>
+<h5 style="text-align: center"><a href="/">Go back</a></h5>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Quiz App</title>
+	
+	<link rel = "icon" href = "{% static 'iccc.png' %}" 
+        type = "image/png">
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="text-center alert alert-info mt-3">⚡Quiz App using Python Django, Javascript and Jquery⚡</h2>
+
+        <div>
+            {% if exam %}
+            {% for i in exam %}
+            <table>
+                <tr>
+                    <td class="text-primary">{{i.id}}) {{i.Question}}</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" class="rb" name={{i.id}} id="Option1" value="{{i.Option1}}">
+                        {{i.Option1}}
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="radio" class="rb" name={{i.id}} id="Option2" value="{{i.Option2}}">
+                        {{i.Option2}}
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="radio" class="rb" name={{i.id}} id="Option3" value="{{i.Option3}}">
+                        {{i.Option3}}
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="radio" class="rb" name={{i.id}} id="Option4" value="{{i.Option4}}">
+                        {{i.Option4}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label id="corans" class="rb" style="display:none; color:green"><b>{{i.Answer}}</b></label>
+                    </td>
+                </tr>
+            </table>
+            <hr>
+
+            {% endfor %}
+
+            <input type="submit" value="Submit" class="btn btn-success" id="b1" onclick="getanswers()">
+            <br>
+            <div class="my-5">
+                <b id="UserAnswers"></b>
+            </div>
+        </div>
+        {% else %}
+        <div class="container col-sm-6">
+        <h3 class="text-center alert alert-danger mt-3">No Quiz Available !!</h3>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- jquery link -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- javascript link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+
+    <script>
+        // jquery code
+        $(document).ready(function () {
+            $("#b1").click(function () {
+                $(".rb").show();
+                $(".rb").attr("disabled", true);
+            });
+        });
+
+        // javascript code
+        function getanswers() {
+            document.getElementById("UserAnswers").innerHTML = "";
+            var e = document.getElementsByTagName("input");
+            for (i = 0; i <= e.length; i++) {
+                if (e[i].type == "radio") {
+                    if (e[i].checked) {
+                        document.getElementById("UserAnswers").innerHTML += "Q." + e[i].name +" Selected answer is : " + e[
+                                i].value + '{{score}}' + "<br>";
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+<footer style="text-align: center">
+    <h5 style="text-align: center">To add question click <a href="/create/">here</a></h5>
+    By <a href="https://github.com/prateiku/">Pratik Chopane</a> & <a href="https://github.com/jacktherock">Abhijeet Sonawane</a>.
+</footer>
+
+</html>
