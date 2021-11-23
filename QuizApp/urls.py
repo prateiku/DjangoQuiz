@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from quiz.views import *
 from quiz import views
+from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('authentication.urls')),
     path('', views.home, name='home'),
     path('create/', views.create, name='create'),
     path('delete/', views.DeleteQues, name='DeleteQues'),

@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from .forms import ExamForm
 from .forms import Exam
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def home(request):
@@ -10,7 +11,7 @@ def home(request):
 
 
  
-# Create your views here.
+@login_required
 def create(request):
     if request.method == 'POST':
         form = ExamForm(request.POST)
@@ -22,7 +23,7 @@ def create(request):
         form = ExamForm()
     return render(request, 'create.html', {'form': form})
 
-
+@login_required
 def DeleteQues(request):
     numba = Exam.objects.all()
     ids = numba.values_list('QuestionNo', flat=True)
