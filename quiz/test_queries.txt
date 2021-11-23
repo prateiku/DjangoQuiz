@@ -1,0 +1,7 @@
+INSERT INTO `quiz_exam`(`id`, `QuestionNo`, `Question`, `Option1`, `Option2`, `Option3`, `Option4`, `Answer`) VALUES ('1','1','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]');
+INSERT INTO `quiz_exam`(`id`, `QuestionNo`, `Question`, `Option1`, `Option2`, `Option3`, `Option4`, `Answer`) VALUES ('2','2','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]');
+INSERT INTO `quiz_exam`(`id`, `QuestionNo`, `Question`, `Option1`, `Option2`, `Option3`, `Option4`, `Answer`) VALUES ('3','3','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]');
+INSERT INTO `quiz_exam`(`id`, `QuestionNo`, `Question`, `Option1`, `Option2`, `Option3`, `Option4`, `Answer`) VALUES ('4','4','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]');
+INSERT INTO `quiz_exam`(`id`, `QuestionNo`, `Question`, `Option1`, `Option2`, `Option3`, `Option4`, `Answer`) VALUES ('5','5','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]');
+INSERT INTO `quiz_exam`(`id`, `QuestionNo`, `Question`, `Option1`, `Option2`, `Option3`, `Option4`, `Answer`) VALUES ('6','6','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]');
+INSERT INTO `quiz_exam`(`id`, `QuestionNo`, `Question`, `Option1`, `Option2`, `Option3`, `Option4`, `Answer`) VALUES ('7','7','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]');

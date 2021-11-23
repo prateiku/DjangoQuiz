@@ -12,11 +12,11 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     
 
-    <title>Add Questions!</title>
+    <title>Delete Questions!</title>
 	
 	<link rel = "icon" href = "{% static 'iccc.png' %}" 
         type = "image/png">
-    <h1 style="text-align: center">Add your own questions!</h1>
+    <h1 style="text-align: center">Delete questions!</h1>
 </head>
 
 <body style="background-color:#CFF4FC;">
@@ -30,10 +30,10 @@
     {% endif %}
         <form method="POST">
             {% csrf_token %}
-            <h4 style="text-align: center">{{ form.as_p }}</h4>
+            <h4 style="text-align: center">{{ form.QuestionNo }}</h4>
             <h5 style="text-align: center"><input type="submit" value="Submit"></h5>
         </form>
 </body>
-<h5 style="text-align: center"><a class="btn btn-primary" href="{% url 'create' %}">- Delete Question</a></h5>
+<h5 style="text-align: center"><a class="btn btn-primary" href="{% url 'create' %}">+ Add New Question</a></h5>
 <h5 style="text-align: center"><a class="btn btn-primary" href="{% url 'home' %}">Go Back</a></h5>
 </html>
